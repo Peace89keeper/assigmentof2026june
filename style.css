@@ -282,12 +282,15 @@ body {
   position: relative;
   width: 100%;
   margin-top: 20px;
+  display:flex;
+  flex-wrap: wrap;
+
 }
 
 /* The curly arrow styling */
 .arrow-icon {
   position: absolute;
-  top: -40px;
+  top: -240px;
   right: 15%;
   width: 45px;
   height: auto;
@@ -361,7 +364,7 @@ body {
 }
 
 .section-background {
-  width: 100%;
+  width: 10%;
   height: auto;
   display: block;
 }
