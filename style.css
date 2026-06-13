@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
 
 :root {
   --primary-blue: #4e6acd; /* Adjust based on exact logo hex */
@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -65,8 +65,9 @@ body {
 .nav-links a {
   text-decoration: none;
   color: var(--text-dark);
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 500; /* Adjusted to Spec: Body Medium */
+  font-size: 18px; /* Adjusted to Spec */
+  line-height: normal; /* Adjusted to Spec */
   transition: color 0.2s ease;
 }
 
@@ -83,8 +84,9 @@ body {
   gap: 8px;
   padding: 12px 24px;
   border-radius: 6px;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 18px; /* Adjusted to Spec: Body Medium */
+  font-weight: 500; /* Adjusted to Spec */
+  line-height: normal; /* Adjusted to Spec */
   cursor: pointer;
   border: none;
   transition: all 0.2s ease;
@@ -131,9 +133,9 @@ body {
 }
 
 .hero-content h1 {
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1.15;
+  font-size: 64px; /* Adjusted to Spec: 1440px H1 */
+  font-weight: 700; /* Adjusted to Spec */
+  line-height: 85px; /* Adjusted to Spec */
   color: var(--primary-dark);
   margin-bottom: 24px;
 }
@@ -156,9 +158,10 @@ body {
 }
 
 .description {
-  font-size: 16px;
+  font-size: 18px; /* Adjusted to Spec: Body Regular */
+  font-weight: 400; /* Adjusted to Spec */
   color: var(--text-gray);
-  line-height: 1.6;
+  line-height: 32px; /* Adjusted to Spec */
   margin-bottom: 32px;
   max-width: 90%;
 }
@@ -175,9 +178,10 @@ body {
 .feature-list li {
   display: flex;
   align-items: center;
-  font-size: 15px;
+  font-size: 18px; /* Adjusted to Spec: Body Regular */
   color: var(--text-dark);
-  font-weight: 500;
+  font-weight: 400; /* Adjusted to Spec */
+  line-height: 32px; /* Adjusted to Spec */
   gap: 12px;
 }
 
@@ -215,10 +219,10 @@ body {
     text-align: center;
   }
 
+  /* Note: Desktop Body Medium spec dictates 18px, but leaving your structural 14px button override here if strictly for sizing limits on tablet */
   .btn-contact {
     padding: 12px 20px;
-    font-size: 14px;
-
+    font-size: 14px; 
     position: relative;
     left: 0;
   }
@@ -239,6 +243,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  
+  /* Adjusted to apply 768px H1 spec down the cascade */
+  .hero-content h1 {
+    font-size: 54px;
+    line-height: 75px;
   }
 
   .feature-list li {
@@ -273,6 +283,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  
+  /* Adjusted to apply 375px H1 spec */
+  .hero-content h1 {
+    font-size: 38px;
+    line-height: 48px;
   }
 }
 
@@ -313,12 +329,14 @@ body {
 
 /* --- Left Column: Headings & Illustration --- */
 .left-col h1 {
-  font-size: 2.5rem;
-
-  font-weight: 700;
+  font-size: 64px; /* Adjusted to Spec: 1440px H1 */
+  font-weight: 700; /* Adjusted to Spec */
+  line-height: 85px; /* Adjusted to Spec */
   color: #0b0c0f; /* Near black */
-  line-height: 1.2;
   margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .highlight1 {
@@ -353,7 +371,9 @@ body {
 
 /* --- Right Column: Text & Features --- */
 .intro-text {
-  font-size: 1.1rem;
+  font-size: 18px; /* Adjusted to Spec: Body Regular */
+  font-weight: 400; /* Adjusted to Spec */
+  line-height: 32px; /* Adjusted to Spec */
   color: #020405;
   margin-bottom: 40px;
   position: relative;
@@ -400,16 +420,18 @@ body {
 
 /* Feature Text Content */
 .feature-item .content h3 {
-  font-size: 1.2rem;
+  font-size: 24px; /* Adjusted to Spec: Large Title */
+  font-weight: 600; /* Adjusted to Spec */
+  line-height: 32px; /* Adjusted to Spec */
   color: #1e293b;
   margin-bottom: 8px;
-  font-weight: 600;
 }
 
 .feature-item .content p {
-  font-size: 1rem;
+  font-size: 18px; /* Adjusted to Spec: Body Regular */
+  font-weight: 400; /* Adjusted to Spec */
+  line-height: 32px; /* Adjusted to Spec */
   color: #64748b;
-  line-height: 1.5;
 }
 
 .left-col img {
@@ -467,12 +489,12 @@ body {
     display: contents;
   }
 
-  /* Center the heading and reduce size slightly for smaller screens */
+  /* Center the heading and apply 768px Spec for H1 */
   .left-col h1 {
     order: 1; /* Ensure heading stays above the illustration */
-    font-size: 2rem;
+    font-size: 54px; /* Adjusted to 768px H1 Spec */
+    line-height: 75px; /* Adjusted to 768px H1 Spec */
     text-align: center;
-
     position: relative;
     justify-content: center;
   }
@@ -480,7 +502,6 @@ body {
   /* Center the intro paragraph */
   .intro-text {
     order: 2;
-
     text-align: center;
     margin-bottom: 30px;
   }
@@ -539,15 +560,16 @@ body {
         padding: 0 10px;
     }
 
-    /* 2. Shrink the main heading so it doesn't span too many lines */
+    /* 2. Apply 375px Spec for H1 */
     .left-col h1 {
-        font-size: 1.6rem; 
-        line-height: 1.3;
+        font-size: 38px; /* Adjusted to 375px H1 Spec */
+        line-height: 48px; /* Adjusted to 375px H1 Spec */
     }
 
-    /* 3. Make intro text slightly smaller to save vertical space */
+    /* 3. Apply Mobile Body Regular Spec */
     .intro-text {
-        font-size: 0.95rem;
+        font-size: 18px; /* Adjusted to Spec: Body Regular is strictly 18px */
+        line-height: 32px; /* Adjusted to Spec */
         margin-bottom: 15px;
     }
 
@@ -567,14 +589,16 @@ body {
         height: 22px;
     }
 
-    /* 6. Adjust feature text sizing */
+    /* 6. Adjust feature text sizing to 375px Specs */
     .feature-item .content h3 {
-        font-size: 1.1rem;
+        font-size: 22px; /* Adjusted to 375px Spec: Large Title */
+        line-height: 32px; /* Adjusted to 375px Spec */
         margin-bottom: 4px;
     }
 
     .feature-item .content p {
-        font-size: 0.9rem;
+        font-size: 18px; /* Adjusted to Spec: Body Regular is strictly 18px */
+        line-height: 32px; /* Adjusted to Spec */
     }
 }
 
@@ -589,7 +613,6 @@ body {
     align-items: center;
     padding: 15px 20px;
     background-color: #f2f4f7; /* Matching the light gray background */
-    font-family: sans-serif;
 }
 
 /* 2. Logo Constraints */
@@ -611,12 +634,6 @@ body {
     gap: 24px;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-}
-
 /* The "Contact Us" Button Base Styling */
 .btn-contact {
     display: flex;
@@ -626,7 +643,7 @@ body {
     border: none;
     padding: 10px 20px;
     border-radius: 8px; /* Rounded corners */
-    font-weight: 600;
+    font-weight: 500; /* Spec adjustment */
     cursor: pointer;
     margin-left: auto; /* The magnetic push: forces this and elements after it to the right */
 }
@@ -682,12 +699,12 @@ body {
 
 
 
-/* Base Reset */
+/* Base Reset Note: Duplicate block in user code */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Roboto", sans-serif; /* Adjusted to Spec to override Segoe UI/Arial */
 }
 
 body {
@@ -801,8 +818,9 @@ body {
     .sidebar-nav a {
         text-decoration: none;
         color: #1a202c;
-        font-size: 1.1rem;
-        font-weight: 500;
+        font-size: 18px; /* Adjusted to Spec: Body Medium */
+        font-weight: 500; /* Adjusted to Spec */
+        line-height: normal; /* Adjusted to Spec */
         display: flex;
         align-items: center;
         gap: 1.2rem;
