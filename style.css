@@ -1,15 +1,16 @@
 /* ==========================================================
-   1. IMPORTS & VARIABLES
+   1. IMPORTS & BASE VARIABLES
    ========================================================== */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
-  --primary-blue: #4e6acd;
-  --primary-dark: #101828;
-  --text-dark: #1d2939;
-  --text-gray: #475467;
-  --bg-light: #f4f6f8; /* Adjusted slightly to match the off-white in the image */
+  --primary-blue: #2563eb; /* Vibrant blue matching the screenshot */
+  --primary-dark: #0f172a; /* Deep slate for headings */
+  --text-dark: #334155;    /* Standard dark gray for readability */
+  --text-gray: #64748b;    /* Lighter gray for secondary text */
+  --bg-page: #f8fafc;      /* Soft off-white to make white cards pop */
   --card-bg: #ffffff;
+  --card-border: #e2e8f0;
 }
 
 /* ==========================================================
@@ -19,45 +20,50 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  background-color: var(--bg-light);
+  background-color: var(--bg-page);
   color: var(--text-dark);
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
 /* ==========================================================
-   3. BASE LAYOUT & CONTAINERS (Desktop First - 1440px Base)
+   3. STRUCTURAL CONTAINERS
    ========================================================== */
 .container {
-  max-width: 1440px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 4%;
+  padding: 0 5%;
   display: flex;
   flex-direction: column;
 }
 
 /* ==========================================================
-   4. NAVBAR & HEADER COMPONENTS
+   4. NAVBAR
    ========================================================== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 0;
   width: 100%;
-  padding: 24px 0;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-dark);
 }
 
 .logo-image {
-  height: 40px;
+  height: 35px;
   width: auto;
+  margin-right: 10px;
 }
 
 .nav-menu {
@@ -69,15 +75,14 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 40px;
+  gap: 35px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-dark);
-  font-weight: 500; /* Spec: Body Medium */
-  font-size: 18px; /* Spec: Body Medium */
-  line-height: normal;
+  font-weight: 500;
+  font-size: 15px;
   transition: color 0.2s ease;
 }
 
@@ -90,109 +95,89 @@ body {
   display: none;
 }
 
-.hamburger-btn {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.hamburger-btn img {
-  height: 24px;
-}
-
 /* ==========================================================
-   5. BUTTONS
+   5. BUTTONS (Visually matched to screenshot)
    ========================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border-radius: 6px;
-  font-size: 18px; /* Spec: Body Medium */
-  font-weight: 500; /* Spec: Body Medium */
-  line-height: normal;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
   border: none;
   transition: all 0.2s ease;
 }
 
 .btn-contact {
-  background-color: #0b258b;
+  background-color: var(--primary-blue);
   color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-}
-
-.btn-icon {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
+  padding: 10px 20px;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
 .btn-primary {
   background-color: var(--primary-blue);
   color: white;
   padding: 14px 28px;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--primary-blue);
-  border: 3px solid #5078b8;
+  color: var(--text-gray);
+  border: 1px solid #cbd5e1;
   padding: 14px 28px;
 }
 
 /* ==========================================================
-   6. HERO SECTION
+   6. HERO SECTION ("Simplifying Compliance")
    ========================================================== */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 0;
-  gap: 40px;
+  padding: 80px 0;
+  gap: 50px;
 }
 
 .hero-content {
   flex: 1;
-  max-width: 55%;
+  max-width: 50%;
 }
 
 .hero-content h1 {
-  font-size: 64px; /* Spec: 1440px H1 */
-  font-weight: 700;
-  line-height: 85px;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
   color: var(--primary-dark);
   margin-bottom: 24px;
+  letter-spacing: -0.02em;
 }
 
 .highlight {
   color: var(--primary-blue);
   position: relative;
   display: inline-block;
-  z-index: 1;
 }
 
 .highlight img {
   position: absolute;
   left: 0;
-  bottom: -10px;
+  bottom: -8px;
   width: 100%;
   height: auto;
   z-index: -1;
 }
 
 .description {
-  font-size: 18px; /* Spec: Body Regular */
-  font-weight: 400;
+  font-size: 16px;
   color: var(--text-gray);
-  line-height: 32px;
-  margin-bottom: 32px;
-  max-width: 90%;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  max-width: 95%;
 }
 
 .feature-list {
@@ -200,22 +185,21 @@ body {
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .feature-list li {
   display: flex;
   align-items: center;
-  font-size: 18px; /* Spec: Body Regular */
+  font-size: 15px;
   color: var(--text-dark);
-  font-weight: 400;
-  line-height: 32px;
+  font-weight: 500;
   gap: 12px;
 }
 
 .check-icon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
 }
 
@@ -226,35 +210,37 @@ body {
 
 .hero-visual {
   flex: 1;
-  max-width: 45%;
+  max-width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  position: relative;
 }
 
 .main-illustration {
   width: 100%;
-  max-width: 650px;
+  max-width: 550px;
   height: auto;
   object-fit: contain;
 }
 
 /* ==========================================================
-   7. CONTENT SECTION 2 (Container 1 - Cloned from Image)
+   7. CONTAINER 1 ("Why Compliance Matters" Section)
    ========================================================== */
 .container1 {
   display: flex;
-  align-items: flex-start; /* Aligns left and right columns to the top */
+  align-items: flex-start;
   justify-content: space-between;
   gap: 60px;
-  max-width: 1440px;
-  margin: 80px auto;
-  padding: 0 4%;
+  max-width: 1300px;
+  margin: 60px auto 100px auto;
+  padding: 0 5%;
 }
 
 .left-col {
   flex: 1;
   max-width: 45%;
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -267,56 +253,53 @@ body {
 }
 
 .left-col h1 {
-  font-size: 64px; /* Spec: 1440px H1 */
-  font-weight: 700;
-  line-height: 85px;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
   color: var(--primary-dark);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
 }
 
-.highlight1 {
-  color: var(--primary-blue);
-}
-
+/* The curly arrow alignment */
 .illustration-wrapper {
   position: relative;
   width: 100%;
   margin-top: 20px;
-  display:flex;
-  flex-wrap: wrap;
-
 }
 
-/* The curly arrow styling */
 .arrow-icon {
   position: absolute;
-  top: -240px;
-  right: 15%;
-  width: 45px;
+  top: -60px;
+  right: 10%;
+  width: 50px;
   height: auto;
   z-index: 2;
+  transform: rotate(10deg);
 }
 
 .section-illustration {
   width: 100%;
-  max-width: 550px;
+  max-width: 500px;
   height: auto;
   display: block;
 }
 
 .intro-text {
-  font-size: 18px; /* Spec: Body Regular */
+  font-size: 15px;
   font-weight: 400;
-  line-height: 32px;
-  color: var(--text-gray);
+  line-height: 1.7;
+  color: var(--text-dark);
   margin-bottom: 40px;
 }
 
-/* Cloned Feature Cards */
+/* ----------------------------------------------------------
+   CLONED FEATURE CARDS
+   ---------------------------------------------------------- */
 .feature-list1 {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .feature-item {
@@ -324,42 +307,52 @@ body {
   align-items: flex-start;
   gap: 20px;
   background-color: var(--card-bg);
-  padding: 32px 24px;
-  border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.05); /* Faint border */
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03); /* Soft shadow from image */
+  padding: 24px 30px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
 }
 
 .feature-item .icon {
   flex-shrink: 0;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f0f4ff; /* Light blue circle */
-  border-radius: 50%;
+  background-color: #eff6ff;
+  border-radius: 8px;
 }
 
 .feature-item .icon i,
 .feature-item .icon img {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
 }
 
+.feature-item .content {
+  display: flex;
+  flex-direction: column;
+}
+
 .feature-item .content h3 {
-  font-size: 24px; /* Spec: Large Title */
-  font-weight: 600;
-  line-height: 32px;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--primary-dark);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .feature-item .content p {
-  font-size: 18px; /* Spec: Body Regular */
+  font-size: 14px;
   font-weight: 400;
-  line-height: 32px;
+  line-height: 1.6;
   color: var(--text-gray);
 }
 
@@ -367,146 +360,144 @@ body {
   width: 10%;
   height: auto;
   display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 /* ==========================================================
-   8. MEDIA QUERIES - TABLET (max-width: 768px)
+   8. MEDIA QUERIES (Tablet: 768px)
    ========================================================== */
 @media (max-width: 768px) {
-  /* Nav & Header */
-  .nav-menu { display: none; }
-  .mobile-header { display: block; }
-  .btn-contact { display: none; } /* Hide on tablet per standard mobile nav pattern */
+  .nav-menu, .btn-contact {
+    display: none;
+  }
+  
+  .mobile-header {
+    display: block;
+  }
 
-  /* Hero Section */
+  .hamburger-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hamburger-btn img {
+    height: 24px;
+  }
+
+  /* Hero Adjustments */
   .hero {
     flex-direction: column;
     text-align: center;
     padding: 40px 0;
   }
+
   .hero-content {
     max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .hero-visual {
-    order: 1; /* Move image to top */
-    max-width: 90%;
-  }
-  .hero-content h1 {
-    order: 2;
-    font-size: 54px; /* Spec: 768px H1 */
-    line-height: 75px;
-    margin-top: 24px;
-  }
-  .description { order: 3; }
-  .feature-list { order: 4; align-items: center; }
-  .action-buttons { order: 5; }
 
-  /* Container 1 (Section 2) */
+  .hero-visual {
+    order: -1;
+    max-width: 90%;
+    justify-content: center;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .feature-list li {
+    justify-content: center;
+  }
+
+  /* Container 1 Adjustments */
   .container1 {
     flex-direction: column;
-    align-items: center;
     gap: 40px;
-    margin: 60px auto;
+    align-items: center;
   }
+
   .left-col, .right-col {
     max-width: 100%;
     text-align: center;
   }
+
   .left-col h1 {
-    font-size: 54px; /* Spec: 768px H1 */
-    line-height: 75px;
+    font-size: 36px;
   }
-  .arrow-icon { display: none; } /* Hide decorative arrow on smaller screens */
-  
+
+  .arrow-icon {
+    display: none;
+  }
+
   .feature-item {
-    text-align: left; /* Keep card text aligned left */
+    text-align: left;
   }
 }
 
 /* ==========================================================
-   9. MEDIA QUERIES - SMALL MOBILE (max-width: 375px)
+   9. MEDIA QUERIES (Mobile: 375px)
    ========================================================== */
 @media (max-width: 375px) {
   .action-buttons {
     flex-direction: column;
     width: 100%;
   }
-  .action-buttons .btn { width: 100%; }
 
-  /* Hero Typography */
+  .action-buttons .btn {
+    width: 100%;
+  }
+
   .hero-content h1 {
-    font-size: 38px; /* Spec: 375px H1 */
-    line-height: 48px;
-  }
-  .description {
-    font-size: 18px; /* Spec: Body Regular strictly 18px */
-    line-height: 32px;
+    font-size: 32px;
   }
 
-  /* Container 1 Typography */
   .left-col h1 {
-    font-size: 38px; /* Spec: 375px H1 */
-    line-height: 48px;
+    font-size: 30px;
   }
-  .intro-text {
-    font-size: 18px; 
-    line-height: 32px;
-  }
+
   .feature-item {
-    flex-direction: column; /* Stack icon and text on tiny screens */
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 24px 16px;
+    padding: 20px 16px;
   }
-  .feature-item .content h3 {
-    font-size: 22px; /* Spec: 375px Large Title */
-    line-height: 32px;
-  }
-  .feature-item .content p {
-    font-size: 18px;
-    line-height: 32px;
+
+  .feature-item .icon {
+    margin-bottom: 10px;
   }
 }
 
 /* ==========================================================
-   10. SIDEBAR DRAWER LOGIC
+   10. SIDEBAR LOGIC (Preserved from previous structure)
    ========================================================== */
 .sidebar-overlay {
-  position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  opacity: 0; pointer-events: none;
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease; z-index: 99;
 }
 .sidebar-overlay.active { opacity: 1; pointer-events: all; }
 
 .sidebar {
-  position: fixed; top: 0; right: -100%;
-  width: 320px; max-width: 85vw; height: 100vh;
-  background-color: #eaedf2; z-index: 100;
-  transition: right 0.3s ease;
+  position: fixed; top: 0; right: -100%; width: 320px; max-width: 85vw; height: 100vh;
+  background-color: var(--card-bg); z-index: 100; transition: right 0.3s ease;
   display: flex; flex-direction: column; padding: 1.5rem;
 }
 .sidebar.active { right: 0; }
 
 .sidebar-header {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 3rem;
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;
 }
-.sidebar-header .logo { font-size: 1.5rem; font-weight: 700; color: #112044; }
 .close-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
 
 .sidebar-nav ul { list-style: none; display: flex; flex-direction: column; gap: 2rem; }
 .sidebar-nav a {
-  text-decoration: none; color: #1a202c;
-  font-size: 18px; font-weight: 500;
-  display: flex; align-items: center; gap: 1.2rem;
-}
-.sidebar-nav a i { font-size: 1.2rem; width: 20px; text-align: center; }
-
-@media (min-width: 769px) {
-  .sidebar, .sidebar-overlay { display: none !important; }
+  text-decoration: none; color: var(--text-dark); font-size: 16px; font-weight: 500;
 }
