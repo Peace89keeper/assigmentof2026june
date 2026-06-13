@@ -334,9 +334,6 @@ body {
   line-height: 85px; /* Adjusted to Spec */
   color: #0b0c0f; /* Near black */
   margin-bottom: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
 }
 
 .highlight1 {
@@ -695,20 +692,6 @@ body {
     .mobile-header {
         margin-left: auto; /* Transfer the magnetic push to the hamburger menu */
     }
-}
-
-
-
-/* Base Reset Note: Duplicate block in user code */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif; /* Adjusted to Spec to override Segoe UI/Arial */
-}
-
-body {
-    background-color: #ffffff;
 }
 
 /* Dummy header just to hold the open button for testing */
