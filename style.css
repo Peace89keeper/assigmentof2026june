@@ -359,6 +359,11 @@ body {
   justify-content: center;
 }
 
+.contact-btn:hover {
+  background-color: transparent;
+  color: var(--primary-blue);
+}
+
 .feature-item .icon i,
 .feature-item .icon img {
   width: 20px;
@@ -502,6 +507,8 @@ body {
   .left-col h1 br {
     display: none;
   }
+
+
 
   .intro-text {
     order: 2;
