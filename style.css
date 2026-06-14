@@ -245,27 +245,10 @@ body {
   margin: 60px auto 100px auto;
   padding: 0 5%;
 }
-.highlight1 {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
 
 .section-background {
   position: relative;
   bottom: 10px;
-}
-
-.why {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  position: relative;
-  top: 49px;
-}
-
-.camp {
-  color: #456dc2;
 }
 
 .left-col {
@@ -274,6 +257,8 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .right-col {
@@ -291,6 +276,23 @@ body {
   color: var(--primary-dark);
   margin-bottom: 10px;
   letter-spacing: -0.02em;
+}
+
+/* Forced inline behavior to prevent HTML divs from breaking the heading */
+.left-col h1 .why,
+.left-col h1 .camp,
+.left-col h1 .line-break,
+.highlight1 {
+  display: inline;
+}
+
+/* Forces the hard break on desktop */
+.left-col h1 br {
+  display: block;
+}
+
+.camp {
+  color: #456dc2;
 }
 
 .illustration-wrapper {
@@ -336,9 +338,9 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  background-color: transparent; /* No card background in 768px spec image */
+  background-color: transparent;
   padding: 30px 0;
-  border: 0.1px solid var(--primary-blur-blue);
+  border: 0.1px solid var(--primary-blue-alpha);
   border-radius: 8px;
 }
 
@@ -378,20 +380,12 @@ body {
 }
 
 /* ==========================================================
-   8. MEDIA QUERIES (Tablet: 768px) - CLONED FROM IMAGE
+   8. MEDIA QUERIES (Tablet: 768px)
    ========================================================== */
-
-@media (min-width: 768px) {
-  .highlight1 {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
 @media (max-width: 768px) {
   /* Navbar adjustments */
   .nav-menu {
-    display: none; /* Hides desktop links */
+    display: none;
   }
 
   .mobile-header {
@@ -427,11 +421,11 @@ body {
     max-width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers all content */
+    align-items: center;
   }
 
   .hero-visual {
-    order: 2; /* Pushes image below text */
+    order: 2;
     max-width: 90%;
     justify-content: center;
   }
@@ -448,14 +442,14 @@ body {
 
   .feature-list {
     order: 3;
-    align-items: flex-start; /* Keep list structure */
-    display: inline-flex; /* Allows centering the block of left-aligned items */
+    align-items: flex-start;
+    display: inline-flex;
     text-align: left;
   }
 
   .action-buttons {
     order: 4;
-    flex-direction: row; /* Keeps buttons side-by-side per the image */
+    flex-direction: row;
     justify-content: center;
     width: 100%;
     gap: 15px;
@@ -481,12 +475,11 @@ body {
     padding: 0 15px;
   }
 
-  /* Rip elements out of standard flow to reorder them */
   .left-col,
   .right-col {
     max-width: 100%;
     width: 100%;
-    display: contents; /* Allows children to participate in container1's flexbox */
+    display: contents;
   }
 
   .left-col h1 {
@@ -494,6 +487,14 @@ body {
     font-size: 34px;
     text-align: center;
     margin-bottom: 15px;
+    max-width: 450px; /* Constrains width to force 2-line wrap */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Hides the hard break to allow natural wrapping */
+  .left-col h1 br {
+    display: none;
   }
 
   .intro-text {
@@ -515,24 +516,24 @@ body {
   }
 
   .arrow-icon {
-    display: none; /* Hide decorative arrow on tablet */
+    display: none;
   }
 
   .feature-item {
-    text-align: left; /* Ensures feature text stays left-aligned */
+    text-align: left;
   }
 }
 
 /* ==========================================================
    9. MEDIA QUERIES (Mobile: 375px)
    ========================================================== */
-@media (max-width: 375px) {
+@media (max-width: 400px) {
   .action-buttons {
-    flex-direction: column; /* Stacks buttons only on very small screens */
+    flex-direction: column;
   }
 
   .btn-contact {
-    display: none; /* Hides top right contact button if screen is too small */
+    display: none;
   }
 
   .hero-content h1 {
@@ -541,6 +542,8 @@ body {
 
   .left-col h1 {
     font-size: 28px;
+    max-width: 250px; /* Constrains width to force exact 3-line wrap */
+    line-height: 1.3;
   }
 
   .highlight1 {
@@ -642,3 +645,6 @@ body {
 .ho {
   color: #456dc2;
 }
+
+
+
