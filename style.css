@@ -4,13 +4,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
-  --primary-blue: #2563eb; /* Vibrant blue matching the screenshot */
-  --primary-dark: #0f172a; /* Deep slate for headings */
-  --text-dark: #334155;    /* Standard dark gray for readability */
-  --text-gray: #64748b;    /* Lighter gray for secondary text */
-  --bg-page: #f8fafc;      /* Soft off-white to make white cards pop */
+  --primary-blue: #456dc2;
+  --primary-dark: #0f172a;
+  --text-dark: #334155;
+  --text-gray: #64748b;
+  --bg-page: #f8fafc;
   --card-bg: #ffffff;
   --card-border: #e2e8f0;
+  --primary-blue-alpha: color-mix(
+    in srgb,
+    var(--primary-blue),
+    transparent 90%
+  );
 }
 
 /* ==========================================================
@@ -92,11 +97,11 @@ body {
 }
 
 .mobile-header {
-  display: none;
+  display: none; /* Hidden on desktop */
 }
 
 /* ==========================================================
-   5. BUTTONS (Visually matched to screenshot)
+   5. BUTTONS
    ========================================================== */
 .btn {
   display: inline-flex;
@@ -112,28 +117,26 @@ body {
 }
 
 .btn-contact {
-  background-color: var(--primary-blue);
+  background-color: var(--primary-blue); /* Matches dark button in image */
   color: white;
   padding: 10px 20px;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
 .btn-primary {
-  background-color: var(--primary-blue);
+  background-color: var(--primary-blue); /* Matches dark button in image */
   color: white;
   padding: 14px 28px;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--text-gray);
-  border: 1px solid #cbd5e1;
+  color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
   padding: 14px 28px;
 }
 
 /* ==========================================================
-   6. HERO SECTION ("Simplifying Compliance")
+   6. HERO SECTION
    ========================================================== */
 .hero {
   display: flex;
@@ -174,10 +177,11 @@ body {
 
 .description {
   font-size: 16px;
-  color: var(--text-gray);
+  color: var(--text-dark);
   line-height: 1.7;
   margin-bottom: 30px;
   max-width: 95%;
+  font-weight: 500;
 }
 
 .feature-list {
@@ -193,7 +197,7 @@ body {
   align-items: center;
   font-size: 15px;
   color: var(--text-dark);
-  font-weight: 500;
+  font-weight: 600;
   gap: 12px;
 }
 
@@ -224,8 +228,13 @@ body {
   object-fit: contain;
 }
 
+.navilia {
+  display: flex;
+  gap: 10px;
+}
+
 /* ==========================================================
-   7. CONTAINER 1 ("Why Compliance Matters" Section)
+   7. CONTAINER 1 ("Why Compliance Matters")
    ========================================================== */
 .container1 {
   display: flex;
@@ -235,6 +244,28 @@ body {
   max-width: 1300px;
   margin: 60px auto 100px auto;
   padding: 0 5%;
+}
+.highlight1 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.section-background {
+  position: relative;
+  bottom: 10px;
+}
+
+.why {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: relative;
+  top: 49px;
+}
+
+.camp {
+  color: #456dc2;
 }
 
 .left-col {
@@ -250,6 +281,7 @@ body {
   max-width: 50%;
   display: flex;
   flex-direction: column;
+  gap: 80px;
 }
 
 .left-col h1 {
@@ -261,7 +293,6 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* The curly arrow alignment */
 .illustration-wrapper {
   position: relative;
   width: 100%;
@@ -271,8 +302,8 @@ body {
 .arrow-icon {
   position: absolute;
   top: -60px;
-  right: 10%;
-  width: 50px;
+  right: 5%;
+  width: 30px;
   height: auto;
   z-index: 2;
   transform: rotate(10deg);
@@ -286,48 +317,38 @@ body {
 }
 
 .intro-text {
+  position: relative;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.7;
-  color: var(--text-dark);
+  color: black;
   margin-bottom: 40px;
+  top: 40px;
 }
 
-/* ----------------------------------------------------------
-   CLONED FEATURE CARDS
-   ---------------------------------------------------------- */
 .feature-list1 {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .feature-item {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  background-color: var(--card-bg);
-  padding: 24px 30px;
-  border-radius: 12px;
-  border: 1px solid var(--card-border);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.feature-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+  background-color: transparent; /* No card background in 768px spec image */
+  padding: 30px 0;
+  border: 0.1px solid var(--primary-blur-blue);
+  border-radius: 8px;
 }
 
 .feature-item .icon {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #eff6ff;
-  border-radius: 8px;
 }
 
 .feature-item .icon i,
@@ -343,50 +364,55 @@ body {
 }
 
 .feature-item .content h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--primary-dark);
-  margin-bottom: 6px;
+  color: black;
+  margin-bottom: 4px;
 }
 
 .feature-item .content p {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6;
-  color: var(--text-gray);
-}
-
-.section-background {
-  width: 10%;
-  height: auto;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  opacity: 0.5;
+  color: var(--text-dark);
 }
 
 /* ==========================================================
-   8. MEDIA QUERIES (Tablet: 768px)
+   8. MEDIA QUERIES (Tablet: 768px) - CLONED FROM IMAGE
    ========================================================== */
-@media (max-width: 768px) {
-  .nav-menu, .btn-contact {
-    display: none;
+
+@media (min-width: 768px) {
+  .highlight1 {
+    display: flex;
+    flex-wrap: wrap;
   }
-  
+}
+
+@media (max-width: 768px) {
+  /* Navbar adjustments */
+  .nav-menu {
+    display: none; /* Hides desktop links */
+  }
+
   .mobile-header {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
 
   .hamburger-btn {
     background: none;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
   }
 
+  .hamburger-btn i,
   .hamburger-btn img {
     height: 24px;
+    width: 24px;
+    font-size: 24px;
   }
 
   /* Hero Adjustments */
@@ -394,51 +420,106 @@ body {
     flex-direction: column;
     text-align: center;
     padding: 40px 0;
+    gap: 30px;
   }
 
   .hero-content {
     max-width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Centers all content */
   }
 
   .hero-visual {
-    order: -1;
+    order: 2; /* Pushes image below text */
     max-width: 90%;
     justify-content: center;
   }
 
   .hero-content h1 {
-    font-size: 40px;
+    font-size: 38px;
+    order: 1;
   }
 
-  .feature-list li {
+  .description {
+    order: 2;
+    text-align: center;
+  }
+
+  .feature-list {
+    order: 3;
+    align-items: flex-start; /* Keep list structure */
+    display: inline-flex; /* Allows centering the block of left-aligned items */
+    text-align: left;
+  }
+
+  .action-buttons {
+    order: 4;
+    flex-direction: row; /* Keeps buttons side-by-side per the image */
     justify-content: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .btn-primary,
+  .btn-outline,
+  .btn-contact {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .btn-contact {
+    width: 150px;
+    height: 40px;
   }
 
   /* Container 1 Adjustments */
   .container1 {
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
     align-items: center;
+    padding: 0 15px;
   }
 
-  .left-col, .right-col {
+  /* Rip elements out of standard flow to reorder them */
+  .left-col,
+  .right-col {
     max-width: 100%;
-    text-align: center;
+    width: 100%;
+    display: contents; /* Allows children to participate in container1's flexbox */
   }
 
   .left-col h1 {
-    font-size: 36px;
+    order: 1;
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .intro-text {
+    order: 2;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .illustration-wrapper {
+    order: 3;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .feature-list1 {
+    order: 4;
+    width: 100%;
   }
 
   .arrow-icon {
-    display: none;
+    display: none; /* Hide decorative arrow on tablet */
   }
 
   .feature-item {
-    text-align: left;
+    text-align: left; /* Ensures feature text stays left-aligned */
   }
 }
 
@@ -447,12 +528,11 @@ body {
    ========================================================== */
 @media (max-width: 375px) {
   .action-buttons {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: column; /* Stacks buttons only on very small screens */
   }
 
-  .action-buttons .btn {
-    width: 100%;
+  .btn-contact {
+    display: none; /* Hides top right contact button if screen is too small */
   }
 
   .hero-content h1 {
@@ -460,44 +540,105 @@ body {
   }
 
   .left-col h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
-  .feature-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px 16px;
-  }
-
-  .feature-item .icon {
-    margin-bottom: 10px;
+  .highlight1 {
+    position: relative;
+    bottom: 5px;
   }
 }
 
 /* ==========================================================
-   10. SIDEBAR LOGIC (Preserved from previous structure)
+   10. SIDEBAR LOGIC
    ========================================================== */
 .sidebar-overlay {
-  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6); opacity: 0; pointer-events: none;
-  transition: opacity 0.3s ease; z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 99;
 }
-.sidebar-overlay.active { opacity: 1; pointer-events: all; }
+.sidebar-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
 
 .sidebar {
-  position: fixed; top: 0; right: -100%; width: 320px; max-width: 85vw; height: 100vh;
-  background-color: var(--card-bg); z-index: 100; transition: right 0.3s ease;
-  display: flex; flex-direction: column; padding: 1.5rem;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 470px;
+  max-width: 85vw;
+  height: 100vh;
+  background-color: var(--card-bg);
+  z-index: 100;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
 }
-.sidebar.active { right: 0; }
+.sidebar.active {
+  right: 0;
+}
 
 .sidebar-header {
-  display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
 }
-.close-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #456dc2;
+}
 
-.sidebar-nav ul { list-style: none; display: flex; flex-direction: column; gap: 2rem; }
+.sidebar-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 .sidebar-nav a {
-  text-decoration: none; color: var(--text-dark); font-size: 16px; font-weight: 500;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 16px;
+  font-weight: 500;
+}
+.sidebar a {
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+}
+
+.contact-btn {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 10px 20px;
+  width: 350px;
+  border: #456dc2;
+  border-radius: 8px;
+}
+
+.sidebar-footer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 100px;
+}
+
+.sidebar-nav img {
+  width: 25px;
+}
+
+.ho {
+  color: #456dc2;
 }
