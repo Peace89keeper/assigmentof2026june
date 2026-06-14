@@ -1,6 +1,4 @@
-/* ==========================================================
-   1. IMPORTS & BASE VARIABLES
-   ========================================================== */
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
@@ -18,9 +16,6 @@
   );
 }
 
-/* ==========================================================
-   2. GLOBAL RESETS
-   ========================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -35,9 +30,7 @@ body {
   line-height: 1.6;
 }
 
-/* ==========================================================
-   3. STRUCTURAL CONTAINERS
-   ========================================================== */
+
 .container {
   max-width: 1300px;
   margin: 0 auto;
@@ -46,9 +39,7 @@ body {
   flex-direction: column;
 }
 
-/* ==========================================================
-   4. NAVBAR
-   ========================================================== */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -100,9 +91,6 @@ body {
   display: none; /* Hidden on desktop */
 }
 
-/* ==========================================================
-   5. BUTTONS & HOVER STATES
-   ========================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -149,9 +137,7 @@ body {
   color: white;
 }
 
-/* ==========================================================
-   6. HERO SECTION
-   ========================================================== */
+
 .hero {
   display: flex;
   align-items: center;
@@ -247,9 +233,7 @@ body {
   gap: 10px;
 }
 
-/* ==========================================================
-   7. CONTAINER 1 ("Why Compliance Matters") & CARDS
-   ========================================================== */
+
 .container1 {
   display: flex;
   align-items: flex-start;
@@ -407,9 +391,7 @@ body {
   color: var(--text-dark);
 }
 
-/* ==========================================================
-   8. MEDIA QUERIES (Tablet: 768px)
-   ========================================================== */
+
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
@@ -545,13 +527,10 @@ body {
 
   .feature-item {
     text-align: left;
-    padding: 20px; /* Adds internal padding so the border hover looks good on mobile */
+    padding: 20px; 
   }
 }
 
-/* ==========================================================
-   9. MEDIA QUERIES (Mobile: 375px)
-   ========================================================== */
 @media (max-width: 400px) {
   .action-buttons {
     flex-direction: column;
@@ -685,6 +664,5 @@ body {
 .ho {
   color: var(--primary-blue);
 }
-
 
 
